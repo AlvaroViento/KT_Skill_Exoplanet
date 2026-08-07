@@ -1,0 +1,20 @@
+{
+  "name": "exoplanet-skills",
+  "interface": {
+    "displayName": "Exoplanet Skills"
+  },
+  "plugins": [
+    {
+      "name": "quick-sketch-logic-review",
+      "source": {
+        "source": "local",
+        "path": "./plugins/quick-sketch-logic-review"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Education & Research"
+    }
+  ]
+}

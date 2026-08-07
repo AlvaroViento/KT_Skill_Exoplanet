@@ -1,0 +1,4 @@
+interface:
+  display_name: "快题方案逻辑检查"
+  short_description: "简洁检查跨设计专业快题的核心逻辑、实现硬伤与成图说服力"
+  default_prompt: "使用 $quick-sketch-logic-review 检查这份快题方案，只指出最重要的问题和最小修改。"

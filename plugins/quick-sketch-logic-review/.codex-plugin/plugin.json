@@ -1,0 +1,26 @@
+{
+  "name": "quick-sketch-logic-review",
+  "version": "0.1.0",
+  "description": "Concise logic review for time-limited design proposals across design disciplines.",
+  "author": {
+    "name": "AlvaroViento",
+    "url": "https://github.com/AlvaroViento"
+  },
+  "homepage": "https://github.com/AlvaroViento/KT_Skill_Exoplanet",
+  "repository": "https://github.com/AlvaroViento/KT_Skill_Exoplanet",
+  "license": "MIT",
+  "keywords": ["design", "quick-sketch", "logic-review", "education"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "快题方案逻辑检查",
+    "shortDescription": "检查快题方案逻辑、实现硬伤与成图说服力",
+    "longDescription": "面向交互、工业、产品、服务及空间类设计快题，检查问题、对象、策略、实现和结果之间的关键断点，并给出少量可执行的最小修改。",
+    "developerName": "AlvaroViento",
+    "category": "Education & Research",
+    "capabilities": ["检查文字 Idea", "复盘快题成图"],
+    "defaultPrompt": [
+      "检查这个快题 Idea，只指出最重要的问题和最小修改。",
+      "复盘这张完整快题图，告诉我最值得重画的两个地方。"
+    ]
+  }
+}
