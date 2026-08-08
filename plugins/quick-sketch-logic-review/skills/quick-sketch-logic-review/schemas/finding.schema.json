@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "finding.schema.json",
+  "title": "Finding",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "title", "module", "category", "severity", "status", "confidence", "evidence_refs", "external_source_refs", "explanation", "minimal_fix", "suggested_visual_form"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "title": {"type": "string", "minLength": 1},
+    "module": {"enum": ["problem", "target_user", "strategy", "implementation", "cross_link", "presentation"]},
+    "category": {"enum": ["fact_error", "logic_break", "paper_gap", "hard_bug", "unreadable", "strength"]},
+    "severity": {"enum": ["fatal", "major", "minor"]},
+    "status": {"enum": ["pass", "weak", "broken", "insufficient_information"]},
+    "confidence": {"enum": ["high", "medium", "low"]},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}},
+    "external_source_refs": {"type": "array", "items": {"type": "string"}},
+    "explanation": {"type": "string", "minLength": 1},
+    "minimal_fix": {"type": "string"},
+    "suggested_visual_form": {"type": ["string", "null"]}
+  }
+}

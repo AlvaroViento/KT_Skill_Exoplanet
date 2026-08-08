@@ -1,75 +1,61 @@
 ---
 name: quick-sketch-logic-review
-description: Concisely review time-limited design sketch proposals across interaction, industrial, product, service, spatial, architectural, landscape, and planning disciplines. Use this when asked to review, diagnose, revise, or reflect on written ideas, sketches, design boards, or complete design-exercise presentations. Focus on identifying logical gaps between the problem, target users or objects, strategy, implementation, and outcomes, as well as critical factual errors and feasibility issues. Recommend only a small number of minimal, high-impact revisions.
-
+description: Review the logic and visible persuasiveness of Chinese or international time-limited design sketch proposals from text, board screenshots, or finished sheets. Use when Codex is asked to审查、诊断、修改、复盘、对标或学习产品、交互、服务、空间、建筑、景观或规划快题，尤其需要核验现实主张、区分外部事实与纸面证据、识别跨模块断点和实现硬伤，并给出快题深度内的最小修复。
 ---
-# 快题方案逻辑检查
 
-把快题视为有限时间内的设计论证。只挑影响结论的重点，不把审查扩展成完整产品咨询。
+# Quick Sketch Logic Review
+
+把快题视为有限时间内的设计论证，不把它扩展成完整产品咨询。先准确还原，再判断；优先找少数能击穿方案的问题。
 
 ## 加载参考
 
-- 始终读取 [review-rules.md](references/review-rules.md)。
-- 遇到会改变结论的现实、技术、法规、标准或理论主张时，读取 [evidence-policy.md](references/evidence-policy.md) 并核验。
+- 始终读取 [review-model.md](references/review-model.md)、[rule-catalog.md](references/rule-catalog.md) 和 [output-contract.md](references/output-contract.md)。
+- 只要涉及现实问题、用户群体、理论、技术、法规、标准或行业惯例，就读取 [evidence-policy.md](references/evidence-policy.md) 并联网核验。
 
-## 选择模式
+## 输入模式
 
-- `idea_review`：文字 Idea、提纲、零散草图或未完成画板。检查方案本身是否成立。
-- `final_review`：完成度较高、已有明确版式和阅读路径的整张快题。检查方案逻辑与图面说服力。
+按可见完成度判断，不按文件后缀判断：
 
-用户指定模式时服从用户。无法确定时默认 `idea_review`，继续执行，不为模式选择中断用户。
+- `text_concept`：纯文字、提纲、口述转写。默认 `review_goal=develop`。
+- `board_draft`：便签、零散文字框、流程草图或未形成统一版式的画板。默认 `review_goal=revise`。
+- `final_sheet`：有完整标题、分区、流程/界面/效果图和统一完成度的整张作品。默认 `review_goal=retrospective`。
 
-## 复述方案
+用户显式指定模式或 `review_goal` 时优先采用。模式置信度低时继续执行，并在开头说明采用的模式、依据和不确定性；不要为此中断用户。`benchmark` 可用于提取优秀表达。
 
-先用一句话复述现有方案：谁或什么对象，在什么情境下面临什么问题，方案通过什么方式产生什么改变。
+## 必须执行的流程
 
-只整理用户明确提供或图中可辨认的信息。不要替作者补齐缺失原因、功能、角色或结果；必要推断必须标明“推测”。
+1. **解析模式与目标。** 记录输入约束、地区和学科语境。
+2. **提取可见证据。** 只提取明确出现的文字、图示、界面、插图和版面关系；逐项标为 `explicit`、`inferred`、`unreadable` 或 `absent`，并记录位置与置信度。
+3. **还原方案。** 规范为“问题 → 对象 → 策略 → 实现 → 效果”。缺失字段保留为空或明确标注推断，禁止无痕补全。
+4. **选择高影响事实主张。** 只检索会改变结论的存在性、重复性、理论适用性、技术能力、监管边界或高风险主张；不检索纯审美偏好和不可证伪愿景。
+5. **检索并核验。** 按证据政策查询、打开来源、交叉验证并保存简短摘要。涉及中国用户是否真实存在、如何行动、抱怨什么或怎样替代时，优先检索中国本地内容与服务平台；只有法规、标准、统计和技术边界才优先官方或学术来源。
+6. **运行审查。** 检查问题、对象、策略、实现四模块，四条相邻连接，以及成本、责任、技术和高风险边界四类实现硬伤。
+7. **应用纸面深度。** 区分“现实成立”和“图面已证明”。建议只能要求一句话、一个小图、一段轻量流程或一次局部重排能承担的最小充分证据；需要重构时明确标为“方案级调整”。
+8. **排序并输出。** `fatal` 优先，其次跨模块/硬伤类 `major`、纸面缺口类 `major`、`minor`。每个 `fatal` 或 `major` 只给一个首选最小修复。
+9. **自检合同。** 检查可见证据引用、外部来源、置信度、模式化措辞和禁用项。生成结构化报告时运行 `python scripts/validate_report.py report.json`。
 
-## 审查流程
+## 模式化纸面判断
 
-### Idea 检查
+- `text_concept`：使用“正式图面至少需要呈现……”，给出最低呈现清单和优先逻辑链。
+- `board_draft`：使用“当前画面已表达……，仍缺少……”，区分未呈现与不可读，给出最小补图和可删减内容。
+- `final_sheet`：使用“最终图面没有让阅卷人看到……，因此……”，复盘阅读路径、逻辑/表达/取舍失败与重画优先级；默认提取可复用优点。
 
-1. 复述方案。
-2. 检查问题、对象与情境、策略、实现、结果五项及其连接。
-3. 找出最可能击穿方案的逻辑断点或实现硬伤。
-4. 只在必要时核验会改变判断的关键事实。
-5. 默认给出一至两个问题；只有第三个问题同样会改变方案结论时才保留。每个问题只给一个最小修改。
+## 强制分离
 
-不要在此模式下以“图面没有证明”为由批评尚未完成的方案。可以指出待验证假设，但不要把它写成成图缺口。
+- 外部证据只能验证现实，永远不能算作作者纸面已经呈现的内容。
+- `unreadable` 不等于 `absent`；看不清时降低置信度，不断言作者没考虑。
+- 缺少完整市场规模、精确预算、完整商业模型、技术架构或全部异常流程，不单独构成硬伤。
+- 不用总分替代诊断；致命问题必须单独置顶。
+- 不为形式完整强行制造缺陷；优秀作品可以通过并提炼方法。
 
-### 成图复盘
+## 修复限制
 
-1. 只提取图面可见、可读的内容；看不清时写“无法辨认”，不要写“没有”。
-2. 按五项通用模型检查方案逻辑与实现硬伤。
-3. 必要时核验关键事实。
-4. 严格区分“现实中成立”和“图面已经证明”：外部资料只能支持前者，不能替代图面证据。
-5. 按重画价值排序，默认给出一至两个问题；只有第三个问题同样值得优先重画时才保留。
+避免“加强调研”“丰富用户画像”“完善技术方案”等空话。把动作写成可执行的最小变化，例如：
 
-## 输出
+- “补一条用户原话，并用箭头连接到失败步骤。”
+- “把确定诊断降级为风险提示，并增加专业人员确认。”
+- “删除两张重复界面，换成对象约束 → 干预 → 近端变化的四节点链。”
 
-使用以下最短结构：
+## 运行检查
 
-```markdown
-## 方案复述
-一句话。
-
-## 最重要的问题
-1. **问题**：一句话。
-   - 依据：一句话。
-   - 最小修改：一个动作。
-
-## 需要确认
-- 仅列确实影响判断的不可读信息、待验证事实或不确定项。
-```
-
-没有“需要确认”时省略该节。该节最多两项，只列答案会改变判断的阻塞项，不要把已经诊断的问题改写成问题再问一遍。
-
-保持短句。每个问题的“问题、依据、最小修改”各限一句；除引用链接外，默认把整份审查控制在 400 个汉字以内。一个问题足以击穿方案时不要凑数。
-
-## 限制
-
-- 不给总分，不用长篇教学代替判断。
-- 不使用“加强调研”“丰富体验”“完善方案”等空话。
-- 不预设方案必须是 App、硬件、服务、空间或系统。
-- 不因缺少精确预算、完整商业模式、技术架构或全部异常流程而单独判定失败。
-- 不扩写新的设计方案，除非用户明确要求。
+在技能目录运行 `python evals/run_evals.py`。六个基准案例必须全部通过；它们覆盖三种模式、事实/纸面分离、成本责任错位、技术与高风险硬伤、不可读状态和优秀作品。

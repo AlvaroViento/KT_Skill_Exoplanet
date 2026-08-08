@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "scheme_model.schema.json",
+  "title": "SchemeModel",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["problem", "target_user", "strategy", "implementation", "effect"],
+  "properties": {
+    "problem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["subject", "context", "obstacle", "consequence", "current_workaround", "gap"],
+      "properties": {
+        "subject": {"type": ["string", "null"]},
+        "context": {"type": ["string", "null"]},
+        "obstacle": {"type": ["string", "null"]},
+        "consequence": {"type": ["string", "null"]},
+        "current_workaround": {"type": ["string", "null"]},
+        "gap": {"type": ["string", "null"]}
+      }
+    },
+    "target_user": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["identity", "recurring_context", "current_behavior", "constraints", "conflict", "distinction"],
+      "properties": {
+        "identity": {"type": ["string", "null"]},
+        "recurring_context": {"type": ["string", "null"]},
+        "current_behavior": {"type": ["string", "null"]},
+        "constraints": {"type": "array", "items": {"type": "string"}},
+        "conflict": {"type": ["string", "null"]},
+        "distinction": {"type": ["string", "null"]}
+      }
+    },
+    "strategy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["premise", "evidence_type", "intervention", "mechanism", "proximal_change", "boundary"],
+      "properties": {
+        "premise": {"type": ["string", "null"]},
+        "evidence_type": {"enum": ["industry_consensus", "human_assumption", "theory", "mixed", "unknown"]},
+        "intervention": {"type": ["string", "null"]},
+        "mechanism": {"type": ["string", "null"]},
+        "proximal_change": {"type": ["string", "null"]},
+        "boundary": {"type": ["string", "null"]}
+      }
+    },
+    "implementation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["actors", "core_flow", "technical_principle", "inputs", "processing", "outputs", "claimed_effect"],
+      "properties": {
+        "actors": {"type": "array", "items": {"type": "string"}},
+        "core_flow": {"type": "array", "items": {"type": "string"}},
+        "technical_principle": {"type": ["string", "null"]},
+        "inputs": {"type": "array", "items": {"type": "string"}},
+        "processing": {"type": "array", "items": {"type": "string"}},
+        "outputs": {"type": "array", "items": {"type": "string"}},
+        "claimed_effect": {"type": ["string", "null"]}
+      }
+    },
+    "effect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["proximal", "distal"],
+      "properties": {
+        "proximal": {"type": ["string", "null"]},
+        "distal": {"type": ["string", "null"]}
+      }
+    }
+  }
+}

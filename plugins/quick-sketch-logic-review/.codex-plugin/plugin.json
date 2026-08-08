@@ -1,7 +1,7 @@
 {
   "name": "quick-sketch-logic-review",
-  "version": "0.1.0",
-  "description": "Concise logic review for time-limited design proposals across design disciplines.",
+  "version": "0.2.0",
+  "description": "Review the logic, visible evidence, feasibility, and high-risk boundaries of time-limited design proposals.",
   "author": {
     "name": "AlvaroViento",
     "url": "https://github.com/AlvaroViento"
@@ -13,14 +13,15 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "快题方案逻辑检查",
-    "shortDescription": "检查快题方案逻辑、实现硬伤与成图说服力",
-    "longDescription": "面向交互、工业、产品、服务及空间类设计快题，检查问题、对象、策略、实现和结果之间的关键断点，并给出少量可执行的最小修改。",
+    "shortDescription": "检查快题逻辑、纸面证据、实现硬伤与现实边界",
+    "longDescription": "面向文字概念、草图与完整快题成图，区分现实成立与图面已证明，定位跨模块断点并给出快题深度内的最小修复。",
     "developerName": "AlvaroViento",
     "category": "Education & Research",
-    "capabilities": ["检查文字 Idea", "复盘快题成图"],
+    "capabilities": ["文字概念审查", "成图复盘", "现实主张核验"],
     "defaultPrompt": [
-      "检查这个快题 Idea，只指出最重要的问题和最小修改。",
-      "复盘这张完整快题图，告诉我最值得重画的两个地方。"
+      "使用 $quick-sketch-logic-review 完整复盘这张快题成图。",
+      "使用 $quick-sketch-logic-review 检查这个快题概念的逻辑链和实现硬伤。",
+      "使用 $quick-sketch-logic-review 对标这份快题，提取可复用的表达方法。"
     ]
   }
 }

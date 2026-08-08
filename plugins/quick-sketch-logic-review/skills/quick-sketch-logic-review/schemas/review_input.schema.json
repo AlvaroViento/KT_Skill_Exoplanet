@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "review_input.schema.json",
+  "title": "ReviewInput",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["input_mode", "review_goal", "raw_text", "images", "user_constraints", "locale"],
+  "properties": {
+    "input_mode": {"enum": ["text_concept", "board_draft", "final_sheet"]},
+    "review_goal": {"enum": ["develop", "revise", "retrospective", "benchmark"]},
+    "raw_text": {"type": ["string", "null"]},
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "path": {"type": ["string", "null"]},
+          "description": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "user_constraints": {"type": "array", "items": {"type": "string"}},
+    "locale": {"type": "string", "default": "zh-CN"}
+  }
+}
