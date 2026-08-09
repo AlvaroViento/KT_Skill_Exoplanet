@@ -1,0 +1,18 @@
+{
+  "name": "exoplanet-skills",
+  "owner": {
+    "name": "AlvaroViento",
+    "url": "https://github.com/AlvaroViento"
+  },
+  "description": "Exoplanet design-review skills for Claude Code.",
+  "metadata": {
+    "description": "Exoplanet design-review skills for Claude Code."
+  },
+  "plugins": [
+    {
+      "name": "quick-sketch-logic-review",
+      "source": "./plugins/quick-sketch-logic-review",
+      "description": "Review the logic, visible evidence, feasibility, and high-risk boundaries of time-limited design proposals."
+    }
+  ]
+}
