@@ -11,8 +11,11 @@
   "plugins": [
     {
       "name": "quick-sketch-logic-review",
+      "displayName": "外星人设计studio_快题方案逻辑检查",
       "source": "./plugins/quick-sketch-logic-review",
-      "description": "Review the logic, visible evidence, feasibility, and high-risk boundaries of time-limited design proposals."
+      "description": "Review the logic, visible evidence, feasibility, and high-risk boundaries of time-limited design proposals.",
+      "category": "Education & Research",
+      "tags": ["文字概念审查", "成图复盘", "现实主张核验"]
     }
   ]
 }

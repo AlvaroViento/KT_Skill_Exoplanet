@@ -1,5 +1,7 @@
 {
   "name": "quick-sketch-logic-review",
+  "displayName": "外星人设计studio_快题方案逻辑检查",
+  "version": "0.2.0",
   "description": "Review the logic, visible evidence, feasibility, and high-risk boundaries of time-limited design proposals.",
   "author": {
     "name": "AlvaroViento",
@@ -8,5 +10,6 @@
   "homepage": "https://github.com/AlvaroViento/KT_Skill_Exoplanet",
   "repository": "https://github.com/AlvaroViento/KT_Skill_Exoplanet",
   "license": "MIT",
-  "keywords": ["design", "quick-sketch", "logic-review", "education"]
+  "keywords": ["design", "quick-sketch", "logic-review", "education"],
+  "skills": "./skills/"
 }

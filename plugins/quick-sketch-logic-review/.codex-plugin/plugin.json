@@ -12,9 +12,9 @@
   "keywords": ["design", "quick-sketch", "logic-review", "education"],
   "skills": "./skills/",
   "interface": {
-    "displayName": "快题方案逻辑检查",
-    "shortDescription": "检查快题逻辑、纸面证据、实现硬伤与现实边界",
-    "longDescription": "面向文字概念、草图与完整快题成图，区分现实成立与图面已证明，定位跨模块断点并给出快题深度内的最小修复。",
+    "displayName": "外星人设计studio_快题方案逻辑检查",
+    "shortDescription": "检查快题逻辑、纸面证据、实现硬伤与现实约束",
+    "longDescription": "面向文字概念、草图与完整快题成图，区分现实中方案是否能成立以及是否已在图像中证明，定位逻辑断点，并给出快题深度内的最小修复。",
     "developerName": "AlvaroViento",
     "category": "Education & Research",
     "capabilities": ["文字概念审查", "成图复盘", "现实主张核验"],
