@@ -1,4 +1,4 @@
 interface:
-  display_name: "快题方案逻辑 Review"
+  display_name: "外星人设计studio_快题方案逻辑检查"
   short_description: "审查快题方案的逻辑、事实、纸面说服力与实现硬伤并给出最小修复"
   default_prompt: "使用 $quick-sketch-logic-review 完整审查这份快题方案，按输入模式执行输出合同，并给出按优先级排序的最小修改。"
